@@ -1,0 +1,19 @@
+Calculates squares of natural numbers up to 7^2 inclusive
+//
+
+MOV cur 0         0
+MOV acc -1			1
+MOV two 2			2
+MOV max 64		3
+MOV res 0			4
+MOV one -1		5
+:tick
+DISP cur
+STOR 00 res cur
+SUB res one
+SUB cur cur acc
+SUB acc acc two
+CMP cur max
+PREPARE JNE :tick
+EXECUTE JNE :tick
+STOR 000 res cur
